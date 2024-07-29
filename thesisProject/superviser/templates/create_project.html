@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Project Form</title>
+</head>
+<body>
+    <h2> Create Your Project</h2>
+    <form action="" method="post">
+        {% csrf_token %}
+        <!-- Project Name -->
+        <label for="project-name">Project Name:</label><br>
+        <input type="text" id="project-name" name="project_name" required><br><br>
+
+        <!-- Project Details -->
+        <label for="project-details">Project Details:</label><br>
+        <textarea id="project-details" name="project_details" required></textarea><br><br>
+
+        <!-- Project Start Date -->
+        <label for="start-date">Project Start Date:</label><br>
+        <input type="date" id="start-date" name="start_date" required><br><br>
+
+        <!-- Project End Date -->
+        <label for="end-date">Project End Date:</label><br>
+        <input type="date" id="end-date" name="end_date" required><br><br>
+
+        <!-- Maximum Students -->
+        <label for="max-students">Max Students:</label><br>
+        <input type="number" id="max-students" name="max_students" required><br><br>
+
+        <!-- checkbox for publish project -->
+        <label for="publish">Publish it</label>
+        <input type="checkbox" id="option1" name="checkPublish"><br><br>
+        
+        <input type="submit" value="submit">
+    </form>
+    <!-- <button>Back</button> -->
+</body>
+</html>

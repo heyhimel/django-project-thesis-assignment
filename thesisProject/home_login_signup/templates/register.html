@@ -1,0 +1,58 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{% static '/css/register.css'%}">
+
+</head>
+<body>
+
+    
+   
+    {% if messages %}
+    {% for message in messages %}
+        {% if message.tags == 'info' %}
+            <div id = 'message'>
+                {{ message }}
+            </div>
+        {% endif %}
+    {% endfor %}
+    {% endif %}
+
+    <div class="form-container">
+        <h1>Register</h1>
+        
+        <form action="" method="POST">
+            {% csrf_token %}
+            <label for="category">Account type</label>
+            <select id="category" name="category">
+                <option value="student">Student</option>
+                <option value="supervisor">Supervisor</option>
+                <option value="coordinator">Coordinator</option>
+            </select>
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="nme" required>
+
+            <label for="email">Email:</label>
+            <input type="email" name="email" required>
+
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" autocomplete="new-password" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" autocomplete="new-password" required>
+
+            <div style="display: flex; justify-content: space-between; width: 100%;">
+                <button type="submit" name="action" value="register">Register</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="{%static '/js/reg_log.js'%}"></script>
+</body>
+</html>

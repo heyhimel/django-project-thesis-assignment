@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+
+    <nav>
+        <div style="display: flex; justify-content: space-between; padding: 10px; background-color: #f8f9fa; border-bottom: 1px solid #ddd;">
+            <div>
+                <a href="http://127.0.0.1:8000/" style="text-decoration: none; color: black;"><h3>Projects</h3></a>
+            </div>
+            <div>
+                <a href="http://127.0.0.1:8000/login/" style="text-decoration: none; color: black;"><h4>login</h4></a>
+            </div>
+        </div>
+    </nav>
+<!-- 
+        <h1>welcome: {{request.session.user_data.name}}</h1>
+        <h1>Username: {{request.session.user_data.userName}}</h1>
+        <h1>Type: {{request.session.user_data.userType}}</h1>
+        <h1>Gmail: {{request.session.user_data.gmail}}</h1>
+-->
+    <div style="text-align: center;">
+        <h1>Project List</h1>
+    </div>
+
+    <div style="padding: 20px; text-align: center;">
+        <button style="margin: 5px; padding: 10px;">Available</button>
+        <button style="margin: 5px; padding: 10px;">Finished</button>
+        <button style="margin: 5px; padding: 10px;">Clear Filter</button>
+    </div>
+
+</body>
+</html>

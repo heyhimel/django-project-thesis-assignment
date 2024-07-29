@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login or signup</title>
+    <link rel="stylesheet" href="{%static '/css/login.css'%}">
+</head>
+<body>
+
+    {% if messages %}
+    {% for message in messages %}
+        {% if message.tags == 'success' %}
+            <div id = 'message'>
+                {{ message }}
+            </div>
+        {% endif %}
+    {% endfor %}
+    {% endif %}
+
+        {% if errorMsg %}
+            <div id = 'message'>
+                {{ errorMsg }}
+            </div>
+        {% endif %}
+
+    <div class="form-container">
+        <h1>login</h1>
+        
+        <form action="" method="POST">  
+            {% csrf_token %}          
+            <label for="category">Account type</label>
+            <select id="category" name="category">
+                <option value="student">Student</option>
+                <option value="supervisor">Supervisor</option>
+                <option value="coordinator">Coordinator</option>
+            </select>
+
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" autocomplete="new-password" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" autocomplete="new-password" required>
+
+            <div style="display: flex; justify-content: space-between; width: 100%;">
+                <button type="submit" name="action" value="login">Login</button>
+            </div>
+        </form>
+        <button onclick="window.location.href='http://127.0.0.1:8000/register/'">Register</button>
+    </div>
+
+    <script src="{%static '/js/reg_log.js'%}"> </script>
+
+</body>
+</html>
